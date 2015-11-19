@@ -111,6 +111,12 @@ ul {
 #clock {
 
     text-align: center;
+    font-family: Quicksand;
+
+    h2{
+
+        color: white;
+    }
 }
 
 #container {
@@ -128,6 +134,11 @@ ul {
         padding-right:10px;
         margin-right: 10px;
         margin-left: 10px;
+    }
+
+    h2 {
+
+        color: white;
     }
 
     position: absolute;
@@ -151,6 +162,16 @@ ul {
     min-width: 600px;
     left: 50%;
     transform: translateX(-50%);
+
+    h2{
+
+        color: white;
+    }
+
+    h4{
+
+        color:white;
+    }
 }
 
 #hoursWeather {
@@ -194,4 +215,6 @@ ul {
 
     display:flex;
 }
+
+
 

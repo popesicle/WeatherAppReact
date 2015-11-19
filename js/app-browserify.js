@@ -258,6 +258,7 @@ var RouteWeather = Backbone.Router.extend({
 		}).done(function(){
 			console.log('getting hourly')
 			React.render(<HourView weatherdata={self.wm}/>,document.getElementById("container"))
+			React.render(<Clock/>, document.getElementById("clock"))
 		})
 	},
 
@@ -269,6 +270,7 @@ var RouteWeather = Backbone.Router.extend({
 		}).done(function(){
 		console.log('getting weekly')
 		React.render(<WeeklyView weatherdata={self.wm}/>,document.getElementById("container"))
+		React.render(<Clock/>, document.getElementById("clock"))
 		})
 	},
 
