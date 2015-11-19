@@ -1,0 +1,197 @@
+
+@import "../bower_components/normalize-css/normalize.css";
+@import "../bower_components/typeplate-starter-kit/css/typeplate.css";
+
+/**
+ * BOX-SIZING
+ */
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+    transition-property: opacity, transform, color, background-color, border-color, z-index, background-image;
+    transition-timing-function: ease;
+}
+
+/**
+ * GRIDS
+ */
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+    > * {
+        flex: 1;
+        flex-basis: 100%;
+    }
+}
+
+@define-mixin grid_r $col, $width {
+    @media only screen and (min-width: $(width)px) {
+        .grid-$(col)-$(width) {
+            & > * {
+                flex-basis: calc(100 / $col)%;
+            }
+            @mixin-content;
+        }
+    }
+}
+
+@define-mixin grid $col {
+    .grid-$(col) {
+        & > * {
+            flex-basis: calc(100 / $col)%;
+        }
+        @mixin-content;
+    }
+}
+
+@mixin grid 2 {}
+@mixin grid 4 {}
+@mixin grid 6 {}
+
+@mixin grid_r 2, 400 {}
+@mixin grid_r 2, 800 {}
+
+@mixin grid_r 4, 400 {}
+@mixin grid_r 4, 800 {}
+
+/**
+ * GENERAL
+ */
+
+img {
+    max-width: 100%;
+}
+/**
+ * YOUR CODE HERE
+ */
+
+body {
+
+    position: relative;
+    height: 900px;
+    background-image: url('images/desert.jpg');
+    background-size: cover;
+
+}
+
+button {
+
+    color: black;
+}
+
+h1{
+
+    color: white;
+    font-family: Quicksand;
+    padding: 40px;
+    text-align: center;
+    
+}
+
+h3 {
+
+    color: white;
+}
+
+ul {
+
+    padding:2%;
+    text-align: left;
+    list-style: none;
+}
+
+#clock {
+
+    text-align: center;
+}
+
+#container {
+
+    .buttonbar {
+        position: absolute;
+        min-width: 600px;
+        top: 85%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .buttons {
+        padding-left:10px;
+        padding-right:10px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    position: absolute;
+    background: rgba(87, 100, 205, .5);
+    font-family: Arial;
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-family: Quicksand;
+}
+
+#theEnd {
+
+    position: absolute;
+    height: 100%;
+    max-width: 600px;
+    min-width: 600px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hoursWeather {
+
+    display: flex;
+
+    li{
+        list-style: none;
+        min-width: 8rem;
+        padding-top: 4rem; 
+    }
+}
+
+#weeklyContainer {
+        li {
+            padding-left: 23px;
+            padding-right: 23px;
+            padding-bottom: 23px;
+        }
+
+    display:flex;
+}
+
+#weeklyDisplay {
+
+    display: flex;
+
+    li{
+
+        list-style: none;
+        flex:1;
+        min-width: 8rem;
+    }
+}
+
+.weatherHours {
+        
+        li{
+            list-style:none;
+        }
+
+    display:flex;
+}
+
